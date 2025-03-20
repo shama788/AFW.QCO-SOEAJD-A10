@@ -63,6 +63,7 @@ public class AddProductToCartTest extends BaseClass{
 	@Test// example to run single method from class cmd -Dtest=className#methodName test
 	public void sample() {
 		System.out.println("sample");
+		System.out.println("hey");
 	}
 
 }

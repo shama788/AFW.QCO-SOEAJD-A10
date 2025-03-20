@@ -56,6 +56,7 @@ public class AddLowestPriceproductToTest extends BaseClass{
 		
 		Assert.assertEquals(productAdded, productInCart);
 		 System.out.println(PRODUCTNAME);
+		 
 
 		
 		
