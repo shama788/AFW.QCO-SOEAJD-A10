@@ -11,6 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 	//Rule 1: Create POM class for every web page
 		//Rule 2 : Identify the webElements -Declaration
+	//@FindAll({ @FindBy(id = "user-name"), @FindBy(name = "user-name") }) //Auto healing
+	//private WebElement usernameEdt;
+	
+//	@FindBys({ @FindBy(id = "user-name"), @FindBy(name = "user-name") }) 
+//	private WebElement usernameEdt; //AND operator both locator should work or true
+	
+	
 		@FindBy(id = "user-name")
 			private WebElement usernameEdt;
 		
