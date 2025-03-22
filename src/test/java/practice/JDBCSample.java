@@ -37,5 +37,61 @@ public class JDBCSample {
 		//Close the database
 		con.close();
 	} 
+	
+	@Test
+	public void executeUpdateSample() throws SQLException
+	{
+		//fetch driver from database
+		Driver dref = new Driver();//mysql
+		
+		//Register the driver
+		DriverManager.registerDriver(dref);
+		
+		//Get Connect with Driver - give databse name
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/customerdb", "root", "root");
+		
+		//Issue create statement
+		Statement state = con.createStatement();
+		
+		//Execute the query - table name 
+		int result = state.executeUpdate("insert into customerinfo values('Kareena',23,'Mumbai');");
+		
+	  if(result==1) {
+		  System.out.println("Data added");
+	  }
+	  else
+	  {
+		  System.out.println("Data not added");
+	  }
+		
+		//Close the database
+		con.close();
+	} 
 
+	@Test
+	public void executeDeleteSample() throws SQLException
+	{
+		//fetch driver from database
+		Driver dref = new Driver();//mysql
+		
+		//Register the driver
+		DriverManager.registerDriver(dref);
+		
+		//Get Connect with Driver - give databse name
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/customerdb", "root", "root");
+		
+		//Issue create statement
+		Statement state = con.createStatement();
+		
+		//Execute the query - table name 
+		boolean result = state.execute("DELETE from customerinfo where id=23;");
+		
+	  if(result==true) {
+		  System.out.println("Data deleted");
+	  }
+	  else
+	  {
+		  System.out.println("Data not deleted");
+	  }
+	}	
 }
